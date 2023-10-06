@@ -1,14 +1,11 @@
 package com.nareshit.notification.system.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Component;
 
 import com.nareshit.notification.system.service.NotificationService;
 
-@RestController
-@RequestMapping("/notifications")
+@Component
 public class NotificationAPI {
 	/*
 	 * SOLID -> Dependency Inversion Principle(Loose Coupling between
@@ -23,7 +20,6 @@ public class NotificationAPI {
 	@Autowired
 	private NotificationService emailNotificationService;
 
-	@GetMapping("/email")
 	public String triggerNotification() {
 		this.emailNotificationService.sendNotification();
 		return "Email Sent successfully.";
