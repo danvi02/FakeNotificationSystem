@@ -1,21 +1,15 @@
 package com.nareshit.notification.system;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-
 import com.nareshit.notification.system.api.NotificationAPI;
+import com.nareshit.notification.system.service.EmailNotificationService;
+import com.nareshit.notification.system.service.NotificationService;
 
-@Configuration
-@ComponentScan
 public class FakeNotificationSystem {
 	public static void main(String[] args) {
-		ApplicationContext applicationContextFactory = new AnnotationConfigApplicationContext(
-				FakeNotificationSystem.class);
+		NotificationAPI notificationAPI = new NotificationAPI();
+		NotificationService emailNotificationService  = new EmailNotificationService();
 		
-		NotificationAPI notificationAPI = applicationContextFactory.getBean(NotificationAPI.class);
+		notificationAPI.setEmailNotificationService(emailNotificationService);
 		notificationAPI.triggerNotification();
-		
 	}
 }
