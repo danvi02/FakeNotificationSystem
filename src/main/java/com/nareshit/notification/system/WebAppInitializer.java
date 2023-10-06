@@ -1,25 +1,24 @@
-//This will be automatically configured by SpringBoot under the hood
-//package com.nareshit.notification.system;
-//
-//import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-//
-//public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
-//
-//	@Override
-//	protected Class<?>[] getRootConfigClasses() {
-//		return new Class[] {};
-//	}
-//
-//	@Override
-//	protected Class<?>[] getServletConfigClasses() {
-//		return new Class[] {FakeNotificationSystem.class};
-//	}
-//
-//	@Override
-//	protected String[] getServletMappings() {
-//		return new String[] {"/"};
-//	}
-//	
-//	
-//
-//}
+package com.nareshit.notification.system;
+
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+	@Override
+	protected Class<?>[] getRootConfigClasses() {
+		return new Class[] {};
+	}
+
+	@Override
+	protected Class<?>[] getServletConfigClasses() {
+		return new Class[] {FakeNotificationSystem.class};
+	}
+
+	@Override
+	protected String[] getServletMappings() {
+		return new String[] {"/"};
+	}
+	
+	
+
+}
